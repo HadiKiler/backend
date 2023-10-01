@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36cd1e8b-0b77-4548-b55a-4474fb37680d" name="Changes" comment="drf push" />
+    <list default="true" id="36cd1e8b-0b77-4548-b55a-4474fb37680d" name="Changes" comment="drf push">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cfehome/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/cfehome/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cfehome/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/cfehome/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/serializer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/views.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,7 +42,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/addii.DESKTOP-IK1H1QG/OneDrive/Desktop/backend&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/addii.DESKTOP-IK1H1QG/OneDrive/Desktop/py_client&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
@@ -54,7 +63,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696078852059</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="drf push">
+      <option name="closed" value="true" />
+      <created>1696112519859</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1696112519859</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
