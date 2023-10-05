@@ -16,14 +16,13 @@ products_details_view = ProductsDetailsView.as_view()
 class ProductsListCreateAPIView(generics.ListCreateAPIView):      # 1.43
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
-    # permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-    # def perform_create(self, serializer):
-    #     # serializer.save(user=self.request.user)
-    #     title = serializer.validated_data.get('title')
-    #     content = serializer.validated_data.get('content') or None
-    #     if content is None:
-    #         content = title
-    #     serializer.save(content=content)
+    def perform_create(self, serializer):
+        # serializer.save(user=self.request.user)
+        title = serializer.validated_data.get('title')
+        content = serializer.validated_data.get('content') or None
+        if content is None:
+            content = title
+        serializer.save(content=content)
 
 products_list_create_view = ProductsListCreateAPIView.as_view()
 

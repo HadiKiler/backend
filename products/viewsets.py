@@ -1,7 +1,7 @@
-from rest_framework import mixins, viewsets
-
+from rest_framework import viewsets, mixins
 from .models import Product
-from .serializers import ProductSerializer
+from .serializer import ProductSerializer
+
 
 class ProductViewSet(viewsets.ModelViewSet):
     '''
@@ -9,25 +9,26 @@ class ProductViewSet(viewsets.ModelViewSet):
     get -> retrieve -> Product Instance Detail View
     post -> create -> New Instance
     put -> Update
-    patch -> Partial UPdate
+    patch -> Partial Update
     delete -> destroy 
     '''
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
-    lookup_field = 'pk' # default
+    lookup_field = 'pk'  # default
 
 
-class ProductGenericViewSet(
-        mixins.ListModelMixin,
-        mixins.RetrieveModelMixin,
-        viewsets.GenericViewSet):
+class ProductGenericViewSet(  # 3.24
+    mixins.ListModelMixin,
+    mixins.RetrieveModelMixin,
+    viewsets.GenericViewSet):
     '''
     get -> list -> Queryset
-    get -> retrieve -> Product Instance Detail View 
+    get -> retrieve -> Product Instance Detail View
     '''
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
-    lookup_field = 'pk' # default
+    lookup_field = 'pk'  # default
 
-# product_list_view = ProductGenericViewSet.as_view({'get': 'list'})
-# product_detail_view = ProductGenericViewSet.as_view({'get': 'retrieve'})
+
+product_list_view = ProductGenericViewSet.as_view({'get': 'list'})  # 3.24
+product_detail_view = ProductGenericViewSet.as_view({'get': 'retrieve'})  # 3.24
