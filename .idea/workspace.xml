@@ -5,14 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36cd1e8b-0b77-4548-b55a-4474fb37680d" name="Changes" comment="end setting">
-      <change afterPath="$PROJECT_DIR$/api/routers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/validators.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/viewsets.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/mixins.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/products/serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/serializer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/validators.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/validators.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/products/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

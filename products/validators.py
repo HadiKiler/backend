@@ -10,5 +10,5 @@ def validate_title(value):  # 3.47  validating_method_2
     return value
 
 
-uniq_product_title = UniqueValidator(queryset=Product.objects.all()) #یک فانشکن اماده است که به ولیدیتور های فیلدی که میخواهیم یونیک باشد اعطا میشود
-                                                                        #  و صد البته در سریالایزر استفاده میشود
+uniq_product_title = UniqueValidator(queryset=Product.objects.all(), lookup="iexact") # یک فانشکن اماده است که به ولیدیتور های فیلدی که میخواهیم
+                                                                            # یونیک باشد اعطا میشود و صد البته در سریالایزر استفاده میشود

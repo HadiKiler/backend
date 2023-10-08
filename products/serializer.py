@@ -9,7 +9,7 @@ class ProductSerializer(serializers.ModelSerializer):
     detail_url = serializers.HyperlinkedIdentityField(view_name="product-detail", lookup_field='pk')    # 3.32
     # send_email = serializers.EmailField(write_only=True)   # 3.33
     title = serializers.CharField(validators=[uniq_product_title])  # 3.47  validating_method_2  # 3.50 validate_title or uniq_product_title
-    class Meta:     #1111
+    class Meta:
         model = Product
         fields = [
             # 'url',

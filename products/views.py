@@ -1,11 +1,11 @@
 from django.shortcuts import render
 from rest_framework import generics, mixins, authentication, permissions
-
+from .mixins import UserQuerySetMixin
 from .models import Product
 from .serializer import ProductSerializer
 
 
-class ProductsDetailsView(generics.RetrieveAPIView):
+class ProductsDetailsView(UserQuerySetMixin, generics.RetrieveAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
 
@@ -13,22 +13,32 @@ products_details_view = ProductsDetailsView.as_view()
 
 
 
-class ProductsListCreateAPIView(generics.ListCreateAPIView):      # 1.43
+class ProductsListCreateAPIView(UserQuerySetMixin, generics.ListCreateAPIView ):      # 1.43
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
+
     def perform_create(self, serializer):
         # serializer.save(user=self.request.user)
         title = serializer.validated_data.get('title')
         content = serializer.validated_data.get('content') or None
         if content is None:
             content = title
-        serializer.save(content=content)
+        serializer.save(user=self.request.user, content=content)
+
+    # def get_queryset(self, *arg, **kwarg):   # ????????????????
+    #     qs = super().get_queryset(*arg, **kwarg)
+    #     request = self.request  # ?????????????????????
+    #     if not request.user.is_authenticated:
+    #         return qs.none()
+    #     return qs.filter(user=request.user)
+
+
 
 products_list_create_view = ProductsListCreateAPIView.as_view()
 
 
 
-class ProductUpdateAPIView(generics.UpdateAPIView):
+class ProductUpdateAPIView(UserQuerySetMixin, generics.UpdateAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
     # lookup_field = 'pk'
@@ -41,7 +51,7 @@ product_update_view = ProductUpdateAPIView.as_view()
 
 
 
-class ProductDestroyAPIView(generics.DestroyAPIView):
+class ProductDestroyAPIView(UserQuerySetMixin, generics.DestroyAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
     permission_classes = [permissions.IsAdminUser]
