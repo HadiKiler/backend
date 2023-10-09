@@ -16,6 +16,7 @@ products_details_view = ProductsDetailsView.as_view()
 class ProductsListCreateAPIView(UserQuerySetMixin, generics.ListCreateAPIView ):      # 1.43
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
+    allow_view_staff = True
 
     def perform_create(self, serializer):
         # serializer.save(user=self.request.user)

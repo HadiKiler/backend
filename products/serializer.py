@@ -1,10 +1,15 @@
 from rest_framework import serializers
+
+from api.serializer import UserSerializer, ProductInlineSerializer
 from products.models import Product
 from rest_framework.reverse import reverse
 from .validators import validate_title, uniq_product_title
 
 
 class ProductSerializer(serializers.ModelSerializer):
+    # method 2 ---- other_products
+    other_product_2 = ProductInlineSerializer(source='user.product_set.all', read_only=True, many=True)     # source ???
+    owner = UserSerializer(source='user', read_only=True)   # source ?????????? UserSerializer ????????
     edit_url = serializers.SerializerMethodField(read_only=True)
     detail_url = serializers.HyperlinkedIdentityField(view_name="product-detail", lookup_field='pk')    # 3.32
     # send_email = serializers.EmailField(write_only=True)   # 3.33
@@ -14,6 +19,8 @@ class ProductSerializer(serializers.ModelSerializer):
         fields = [
             # 'url',
             # 'send_email',
+            'owner',
+            'other_product_2',
             'detail_url',
             'edit_url',
             'id',
@@ -39,3 +46,5 @@ class ProductSerializer(serializers.ModelSerializer):
     #     send_email = validated_data.pop('send_email')
     #     # return Product.objects.create(**validated_data)
     #     return super().create(validated_data)    # ??????????????????
+
+
