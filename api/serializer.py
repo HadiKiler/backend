@@ -11,7 +11,7 @@ class ProductInlineSerializer(serializers.Serializer):
 class UserSerializer(serializers.Serializer):
     username = serializers.CharField(read_only=True)    # read only ?????
     id = serializers.CharField(read_only=True)  # read only ?????
-    other_products = serializers.SerializerMethodField(read_only=True)
+    # other_products = serializers.SerializerMethodField(read_only=True)
 
     def get_other_products(self, obj):
         user = obj

@@ -34,7 +34,6 @@ class ProductsListCreateAPIView(UserQuerySetMixin, generics.ListCreateAPIView ):
     #     return qs.filter(user=request.user)
 
 
-
 products_list_create_view = ProductsListCreateAPIView.as_view()
 
 

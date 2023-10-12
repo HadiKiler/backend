@@ -8,9 +8,9 @@ from .validators import validate_title, uniq_product_title
 
 class ProductSerializer(serializers.ModelSerializer):
     # method 2 ---- other_products
-    other_product_2 = ProductInlineSerializer(source='user.product_set.all', read_only=True, many=True)     # source ???
+    # other_product_2 = ProductInlineSerializer(source='user.product_set.all', read_only=True, many=True)   # source ???
     owner = UserSerializer(source='user', read_only=True)   # source ?????????? UserSerializer ????????
-    edit_url = serializers.SerializerMethodField(read_only=True)
+    # edit_url = serializers.SerializerMethodField(read_only=True)
     detail_url = serializers.HyperlinkedIdentityField(view_name="product-detail", lookup_field='pk')    # 3.32
     # send_email = serializers.EmailField(write_only=True)   # 3.33
     title = serializers.CharField(validators=[uniq_product_title])  # 3.47  validating_method_2  # 3.50 validate_title or uniq_product_title
@@ -20,14 +20,14 @@ class ProductSerializer(serializers.ModelSerializer):
             # 'url',
             # 'send_email',
             'owner',
-            'other_product_2',
+            # 'other_product_2',
             'detail_url',
-            'edit_url',
+            # 'edit_url',
             'id',
             'title',
             'content',
             'price',
-            'sale_price',
+            # 'sale_price',
         ]
 
     def get_edit_url(self, obj):
