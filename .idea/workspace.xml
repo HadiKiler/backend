@@ -10,7 +10,6 @@
       <change beforePath="$PROJECT_DIR$/cfehome/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/cfehome/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/products/serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/serializer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

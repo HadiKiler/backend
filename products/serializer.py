@@ -13,18 +13,18 @@ class ProductSerializer(serializers.ModelSerializer):
     # edit_url = serializers.SerializerMethodField(read_only=True)
     detail_url = serializers.HyperlinkedIdentityField(view_name="product-detail", lookup_field='pk')    # 3.32
     # send_email = serializers.EmailField(write_only=True)   # 3.33
-    title = serializers.CharField(validators=[uniq_product_title])  # 3.47  validating_method_2  # 3.50 validate_title or uniq_product_title
+    title = serializers.CharField(validators=[validate_title])  # 3.47  validating_method_2  # 3.50 validate_title or uniq_product_title
     class Meta:
         model = Product
         fields = [
             # 'url',
             # 'send_email',
+            'id',
+            'title',
             'owner',
             # 'other_product_2',
             'detail_url',
             # 'edit_url',
-            'id',
-            'title',
             'content',
             'price',
             # 'sale_price',
