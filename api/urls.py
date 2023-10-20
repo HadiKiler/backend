@@ -14,6 +14,7 @@ from products.viewsets import ProductViewSet
 urlpatterns = [
     path('', views.api_home),    # localhost:8000/api/
     path('auth/', obtain_auth_token),
+    path('search/', include('search.urls')),
     path('products/', include('products.urls')),
     path('v2/', include('api.routers'))
 ]

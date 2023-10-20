@@ -27,6 +27,7 @@ class ProductSerializer(serializers.ModelSerializer):
             # 'edit_url',
             'content',
             'price',
+            'is_offer'
             # 'sale_price',
         ]
 

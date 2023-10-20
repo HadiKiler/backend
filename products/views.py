@@ -18,13 +18,14 @@ class ProductsListCreateAPIView(UserQuerySetMixin, generics.ListCreateAPIView ):
     serializer_class = ProductSerializer
     allow_view_staff = True
 
-    def perform_create(self, serializer):
-        # serializer.save(user=self.request.user)
-        title = serializer.validated_data.get('title')
-        content = serializer.validated_data.get('content') or None
-        if content is None:
-            content = title
-        serializer.save(user=self.request.user, content=content)
+
+    # def perform_create(self, serializer):
+    #     # serializer.save(user=self.request.user)
+    #     title = serializer.validated_data.get('title')
+    #     content = serializer.validated_data.get('content') or None
+    #     if content is None:
+    #         content = title
+    #     serializer.save(user=self.request.user, content=content)
 
     # def get_queryset(self, *arg, **kwarg):   # ????????????????
     #     qs = super().get_queryset(*arg, **kwarg)
@@ -51,7 +52,7 @@ product_update_view = ProductUpdateAPIView.as_view()
 
 
 
-class ProductDestroyAPIView(UserQuerySetMixin, generics.DestroyAPIView):
+class ProductDestroyAPIView( generics.DestroyAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
     permission_classes = [permissions.IsAdminUser]
