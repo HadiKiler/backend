@@ -52,7 +52,7 @@ product_update_view = ProductUpdateAPIView.as_view()
 
 
 
-class ProductDestroyAPIView( generics.DestroyAPIView):
+class ProductDestroyAPIView(UserQuerySetMixin, generics.DestroyAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
     permission_classes = [permissions.IsAdminUser]
